@@ -16,6 +16,11 @@ const Login = () => {
 let SubmitHandler =(e)=>{
 e.preventDefault(e)
 console.log("submited",FormData)
+setFormData({
+  name:"",
+  email:"",
+  password:"",
+})
 }
 
   return (
@@ -31,6 +36,7 @@ console.log("submited",FormData)
           <input
             className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-300"
             type="text"
+            value={FormData.name}
       onChange={ChangesHandler}
             name="name"
             placeholder="Enter Your Name"
@@ -38,6 +44,7 @@ console.log("submited",FormData)
           <input
             className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-300"
             type="email"
+            value={FormData.email}
             onChange={ChangesHandler}
             name="email"
             placeholder="Enter Your Email"
@@ -45,6 +52,7 @@ console.log("submited",FormData)
           <input
             className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none focus:ring-2 focus:ring-blue-300"
             type="password"
+            value={FormData.password}
             onChange={ChangesHandler}
             name="password"
             placeholder="Enter Your Password"
@@ -52,7 +60,7 @@ console.log("submited",FormData)
           <button className="w-full mt-3 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-400 transition duration-200">Submit</button>
         </form>
         <div className="flex justify-between w-full mt-4 text-blue-300 text-sm font-medium">
-          <a className="hover:text-blue-400 cursor-pointer">Forgot Password?</a>
+          <a onClick={()=>nevigate("/forget")} className="hover:text-blue-400 cursor-pointer">Forgot Password?</a>
           <a className="hover:text-blue-400 cursor-pointer">Need Help?</a>
         </div>
       </div>
