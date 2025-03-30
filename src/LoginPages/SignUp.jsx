@@ -110,7 +110,7 @@ const Signup = () => {
         </form>
         <div className="flex justify-between w-full mt-4 text-blue-300 text-sm font-medium">
           <a onClick={()=>nevigate("/forget")} className="hover:text-blue-400 cursor-pointer">Forgot Password?</a>
-          <a className="hover:text-blue-400 cursor-pointer">Need Help?</a>
+          <a onClick={()=>nevigate("/help")} className="hover:text-blue-400 cursor-pointer">Need Help?</a>
         </div>
       </div>
     </div>
