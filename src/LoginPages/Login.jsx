@@ -2,9 +2,10 @@ import React, { Children, useState } from "react";
 import logo from "./logo.png";
 import login from "./LoginPage.jpeg";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
   const nevigate = useNavigate()
+
   const [FormData, setFormData] = useState({
     name:"",
     email:"",
@@ -21,10 +22,22 @@ setFormData({
   email:"",
   password:"",
 })
+  toast.success("Login Success", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+   
+    });
+
 }
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center relative bg-cover bg-center" style={{ backgroundImage: `url(${login})` }}>
+    <div className="flex h-screen w-screen items-center justify-center relative bg-cover bg-center" style={{ backgroundImage: `url(${login})` }}><ToastContainer/>
     
       <button onClick={()=>nevigate("/signup")} className=" text-white absolute top-0 bg-blue-600 m-4 p-3 rounded-xl right-0 ">Create New Account</button>
       
@@ -57,7 +70,7 @@ setFormData({
             name="password"
             placeholder="Enter Your Password"
           />
-          <button className="w-full mt-3 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-400 transition duration-200">Submit</button>
+          <button onClick={()=>nevigate("/foodies")} className="w-full mt-3 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-400 transition duration-200">Submit</button>
         </form>
         <div className="flex justify-between w-full mt-4 text-blue-300 text-sm font-medium">
           <a onClick={()=>nevigate("/forget")} className="hover:text-blue-400 cursor-pointer">Forgot Password?</a>
