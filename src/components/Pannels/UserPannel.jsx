@@ -1,6 +1,11 @@
 import React from 'react';
 import image from './imgs/banner.jpeg';
 import logo from "./imgs/logo.png";
+import veg from "./imgs/veg.png"
+import Nonveg from "./imgs/non-veg.png"
+import chinese from "./imgs/noodle.png"
+import DietFood from "./imgs/dietfood.webp"
+import FastFood from "./imgs/fastfood.webp"
 import { useNavigate } from 'react-router-dom';
 
 const UserPannel = () => {
@@ -29,16 +34,34 @@ const UserPannel = () => {
       
       <div className='absolute bottom-40 left-10 w-[55%] text-white font-bold text-[4vw] leading-tight'>
         <h1>
-          From your favorite <span className='text-red-500'>restaurants</span> to your table
+          From your favorite <span className='text-red-600'>restaurants</span> to your table
           <br /> fast, fresh, and hassle-free!
         </h1>
       </div>
     
     </div>
-    <div className='w-screen h-screen shadow-lg bg-gradient-to-b from-black/40 to-transparent flex flex-col p-5 justify-center items-center'>
-    <h1 className='text-[4vw] text-center'>Get Non Veg & Veg Meels At Affordable <br /> Prize</h1>
-    <div className='w-[78%] h-full border-black border'></div>
+    <div className="w-screen h-[25vw] shadow-2xl flex bg-gradient-to-r from-red-900 to-red-700 backdrop-blur-lg p-5 justify-center items-center">
+  <div className="w-[78%] h-full rounded-3xl bg-[#F5F3CD] border-2 border-gray-800 shadow-xl p-6">
+    <h1 className="font-extrabold text-center text-[3.5vw] text-red-600 drop-shadow-md tracking-wide">
+      What's In Your Mind?
+    </h1>
+    <div className="flex items-center justify-center gap-8 mt-4">
+      {[
+        { img: veg, label: "Veg" },
+        { img: Nonveg, label: "Non-Veg" },
+        { img: chinese, label: "Chinese" },
+        { img: FastFood, label: "Fast Food" },
+        { img: DietFood, label: "Diet Food" }
+      ].map(({ img, label }, index) => (
+        <div key={index} className="w-[18%] transition-transform transform hover:scale-110">
+          <img className="w-[80%] m-auto mix-blend-darken rounded-full border-2 border-gray-700" src={img} alt={label} />
+          <h3 className="text-center text-xl font-semibold mt-2 text-gray-800">{label}</h3>
+        </div>
+      ))}
     </div>
+  </div>
+</div>
+
     </div>
     </>
   );
