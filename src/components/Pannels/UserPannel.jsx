@@ -7,6 +7,8 @@ import chinese from "./imgs/noodle.png"
 import DietFood from "./imgs/dietfood.webp"
 import FastFood from "./imgs/fastfood.webp"
 import { useNavigate } from 'react-router-dom';
+import FoodBoxes from './FoodBoxes';
+import Footer from '../Footer/Footer';
 
 const UserPannel = () => {
   let nevigate = useNavigate()
@@ -61,7 +63,8 @@ const UserPannel = () => {
     </div>
   </div>
 </div>
-
+<FoodBoxes/>
+<Footer/>
     </div>
     </>
   );
