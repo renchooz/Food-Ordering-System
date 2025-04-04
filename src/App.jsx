@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ForgetPass from './Help/ForgetPass';
 import NeedHelp from './Help/NeedHelp';
 import UserPannel from './components/Pannels/UserPannel';
+import ResturantPannel from './components/Pannels/ResturantPannel';
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
           <Route path='/forget' element={<ForgetPass/>}/>
           <Route path='/help' element={<NeedHelp/>}/>
           <Route path="/foodies" element={<UserPannel/>}/>
+          <Route path="/restaurant" element={<ResturantPannel/>}/>
+
         </Routes>
       </Router>
     </div>
